@@ -1,0 +1,29 @@
+input:focus,button,textarea{
+   outline: none;
+}
+input {
+  height: 20px;
+  font-size: 17px;
+  font-family: monospace;
+  margin-bottom: 20px;
+}
+textarea{
+  font-family: monospace;
+  font-size: 17px;
+
+}
+button{
+  padding: 5px;
+  font-family: monospace;
+}
+label{
+  transform: uppercase;
+  font-size: 18px;
+}
+#back{
+    position: absolute;
+    color: red;
+    font-size: 102px;
+    bottom: 33px;
+    left: 50px;
+}

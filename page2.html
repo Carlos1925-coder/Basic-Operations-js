@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+$(document).ready(function(){
+  $("#fade").click(function(){
+    $("#text").fadeTo("slow", 0.01);
+    x();
+  });
+});
+  </script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="page 2 of javascript basic opeartion  assgniment for week 2 at ccsf ">
+  <title>Page2-CNIT</title>
+  <link rel="stylesheet" type="text/css" href="main2.css">
+   <!-- begin of javascript code -->
+       <script>
+         <!-- this is the jquery funtion for fade out effect button activited -->
+         function x(){
+          document.getElementById("submit").style.display="none";
+          document.getElementById("submit_zero").style.display="block";   
+          document.getElementById("fade").style.display="none";
+          
+         }
+        <!--function op-->
+          function op(){
+            
+             <!-- 1,2,3 input data -->
+             var one = document.getElementById("Fn").value;
+             var two =  document.getElementById("Sn").value;
+             var three = document.getElementById("Tn").value;
+            
+            
+             <!-- turn the input data too Integers and do opeartions with the Input Data -->
+             var sum = parseInt(one)+parseInt(two)+parseInt(three);
+             var product = (parseInt(one)*parseInt(two))*parseInt(three);
+             var avg_one = parseInt(one)+parseInt(two)+parseInt(three);
+             var min = Math.min(parseInt(one),parseInt(two),parseInt(three));
+             var max = Math.max(parseInt(one),parseInt(two),parseInt(three));
+             var avg = avg_one/3;
+            
+             <!--Here Clear the input -->
+             document.getElementById("Fn").value="";
+             document.getElementById("Sn").value="";
+             document.getElementById("Tn").value="";
+             document.getElementById("text").rows = 4;
+            
+            <!-- if statement is too make sure user is only using integer inputs -->
+             if(isNaN(sum)){
+               alert("Please try again, Use ONLY number")
+               return;
+             }else{
+               // alert("yes")
+             }
+            
+            <!-- here we creating a UI output of the input data + mathematical operations -->
+             document.getElementById("text").value= "|Sum= "+sum+"  |Product= "+product+"|"+"  |Average= "+avg.toFixed(2)+"|"+"  |Max="+max+"   |Min= "+min+"|";
+              document.getElementById("fade").style.display ="inline";
+              document.getElementById("submit_zero").style.display="none"; 
+              document.getElementById("submit").style.display="block";     
+              document.getElementById("submit").style.margin="auto";
+              document.getElementById("submit_zero").style.margin="auto";
+              document.getElementById("text").style.opacity="1";
+       }<!-- end of function of-->
+         
+    
+       
+        <!-- function reset op_z-->
+        function op_z(){
+          document.getElementById("text").value="";
+          document.getElementById("submit").style.display="none";
+          document.getElementById("submit_zero").style.display="block";   
+          document.getElementById("fade").style.display="none";
+        }<!-- end of function reset-->
+       
+    </script><!-- end of javascript code -->
+</head>
+<body>
+   <a href="index.html"><span id="back"> &#x2190</span></a>
+  <!-- container -->
+  <div id="container" style="text-align:center; border: 1px solid #000;width: 500px;margin: auto;margin-top: 9%;overflow:hidden;">
+    
+      
+       <br>
+        
+        <!-- Part-2 -->
+    
+       <!-- HTML -->
+       <form>
+         <label >First number:</label><br>
+         <input type="number" id="Fn" name="fname"  ><br>
+         <label >second number:</label><br>
+         <input type="number" id="Sn" name="lname"><br>
+         <label >Last thrid:</label><br>
+         <input type="number" id="Tn" name="lname">
+       </form> 
+       <br>
+    
+    
+       <!-- submit and reset buttons -->
+       <button onclick="op()" id="submit_zero" style="text-align:center;">Submit</button>
+       <button onclick="op_z()" id="submit" style="display:none">Reset</button> 
+       <button onclick="op_z1()" id="fade" style="display:none">Click to Fade Results</button> 
+  
+        <!-- title for reset area-->  
+       <h3 id="results" style="margin-bottom:0px;">Results:</h3>
+       
+    
+    
+      
+    <br><hr>
+    
+     <!-- result display area -->
+    <textarea name="result" id="text" cols="49" rows="4" style="border: none;padding-left: 5px"></textarea>
+
+  </div><!-- end of container -->
+</body>
+</html>
